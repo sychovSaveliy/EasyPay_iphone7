@@ -1,3 +1,79 @@
+@import mixins/mixins
+
+*
+    box-sizing: border-box
+    -webkit-box-sizing: border-box
+
+html, body
+    height: 100%
+
 body
-    margin: 0
-    padding: 0
+    background-color: #fff
+    font-family: "MyriadProThin", sans-serif
+
+.container
+    display: flex
+
+
+.main-wrapper
+    width: 100%
+    max-width: 1200px
+    margin: 0 auto
+
+.header
+    +flex-flow(row)
+
+.header__slogan-container, .header__main-img
+    +flex-flow(column)
+    width: 50%
+
+.header__slogan
+    margin-top: 250px
+    span
+        font-size: 62px
+        color: #333333
+
+.header__form-action
+    margin-top: 110px
+    form
+        +flex-flow(column)
+        input
+            margin-top: 10px
+            border-radius: 20px
+            height: 40px
+            width: 300px
+            font-size: 25px
+            &:focus
+                outline: none
+
+        input[type="text"], input[type="email"]
+            border: 1px solid #888888
+            padding: 10px
+            padding-left: 20px
+            color: #888888
+
+        input[type="submit"]
+            margin-top: 40px
+            border: 0
+            background-color: #066ab6
+            color: #fff
+
+        .ID_check
+            color: #ff9800
+            font-size: 21px
+            margin-top: 10px
+            margin-left: 20px
+            width: 100%
+            position: relative
+            +flex-flow(row, center)
+            &:before
+                content: ""
+                background-image: url(../images/flag_mini.png)
+                background-repeat: no-repeat
+                background-size: 100%
+                width: 30px
+                height: 30px
+                position: absolute
+                left: -5px
+                top: -5px
+
