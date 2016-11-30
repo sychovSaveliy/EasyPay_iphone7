@@ -17,8 +17,9 @@ body {
 
 .main-wrapper {
   width: 100%;
-  max-width: 1200px;
-  margin: 0 auto; }
+  background-image: url(../images/iphone.png);
+  background-repeat: no-repeat;
+  background-position: center; }
 
 .header {
   display: -webkit-box;
@@ -37,7 +38,11 @@ body {
   -webkit-box-align: start;
   -webkit-align-items: flex-start;
       -ms-flex-align: start;
-          align-items: flex-start; }
+          align-items: flex-start;
+  height: 950px;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto; }
 
 .header__slogan-container, .header__main-img {
   display: -webkit-box;

@@ -17,11 +17,15 @@ body
 
 .main-wrapper
     width: 100%
-    max-width: 1200px
-    margin: 0 auto
+    background-image: url(../images/iphone.png)
+    background-repeat: no-repeat
+    background-position: center
 
 .header
     +flex-flow(row)
+    
+    height: 950px
+    +container-center
 
 .header__slogan-container, .header__main-img
     +flex-flow(column)
