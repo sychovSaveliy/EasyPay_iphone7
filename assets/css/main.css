@@ -378,7 +378,8 @@ body {
   -webkit-align-items: flex-start;
       -ms-flex-align: start;
           align-items: flex-start;
-  width: 100%; }
+  width: 100%;
+  height: 205px; }
 
 .condition__step-circle {
   width: 60px; }
@@ -413,7 +414,8 @@ body {
   margin-left: 25px; }
   .condition__descr h3 {
     margin-bottom: 40px;
-    font-size: 30px; }
+    font-size: 30px;
+    height: 95px; }
   .condition__descr a {
     text-decoration: none;
     color: #066ab6; }
@@ -442,6 +444,10 @@ body {
 .condition__image-block {
   border-radius: 50%;
   border: 2px solid #e5e5e5;
-  background-color: #fafafa; }
+  background-color: #fafafa;
+  overflow: hidden; }
+  .condition__image-block img {
+    width: 100%;
+    height: 100%; }
 
 /*# sourceMappingURL=main.css.map */
