@@ -23,8 +23,8 @@ body
 .header
     +flex-flow(row)
     +container-center
-    +resp(medium)
-        padding: 0 20px
+    padding: 0 20px
+
 
 .header__slogan-container, .header__main-img
     +flex-flow(column)
@@ -36,6 +36,10 @@ body
         font-size: 62px
     +resp(medium)
         margin-top: 100px
+    +resp(small)
+        margin-top: 0
+        span
+            font-size: 45px
 
 .header__form-action
     margin-top: 110px
@@ -89,6 +93,9 @@ body
     h2
         font-size: 50px
         margin-bottom: 100px
+    +resp(small)
+        h2
+            font-size: 45px
 
 .review__blocks-container
     +flex-flow(row, center, center)
@@ -106,6 +113,8 @@ body
     +flex-flow(column, space-around, center)
     p
         font-size: 20px
+    +resp(small)
+        padding: 60px
     
     &:before
         content: ""
@@ -140,6 +149,8 @@ body
         font-size: 50px
         margin-bottom: 100px
         margin-top: 50px
+    +resp(small)
+        font-size: 45px
 
 .condition-container
     +flex-flow(row, center, center)
@@ -150,7 +161,7 @@ body
     width: 33.3333333%
     +flex-flow(column)
     min-width: 385px
-    margin-bottom: 30px
+    margin-bottom: 60px
 
 .condition__step
     +flex-flow(row)
@@ -172,10 +183,14 @@ body
 .condition__descr
     width: calc(100% - 60px)
     margin-left: 25px
+    p
+        font-size: 20px
     h3
         margin-bottom: 40px
         font-size: 30px
         height: 95px
+        +resp(small)
+            height: 60px
     a
         text-decoration: none
         color: #066ab6
@@ -184,6 +199,8 @@ body
     +flex-flow(row, center)
     width: 100%
     margin-top: 80px
+    +resp(small)
+        margin-top: 40px
 
 .condition__image-block
     border-radius: 50%
@@ -198,8 +215,7 @@ body
 .rule
     +container-center
     +flex-flow(column, center, center)
-    +resp(medium)
-        padding: 0 20px
+    padding: 0 20px
 
 .rule__container
     +flex-flow(row)
@@ -240,8 +256,6 @@ body
     height: 130px
     background-color: #252525
     position: relative
-    +resp(small)
-        width: 50px
 
 
 @import wrappers/wrappers
