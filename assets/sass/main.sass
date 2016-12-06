@@ -1,11 +1,14 @@
 @import mixins/mixins
 
+
+
 *
     box-sizing: border-box
     -webkit-box-sizing: border-box
 
 html, body
     height: 100%
+    overflow: auto
 
 body
     background-color: #fff
@@ -18,32 +21,35 @@ body
 .container
     display: flex
 
-
-.header-wrapper
-    width: 100%
-    min-height: 100%
-    height: auto !important
-    background-image: url(../images/iphone.png)
-    background-repeat: no-repeat
-    background-position: top center
-    background-size: 1200px
-
-
 .header
     +flex-flow(row)
-    height: 100vh
     +container-center
+    padding: 0 20px
+    @media only screen and (max-width: 750px)
+        justify-content: center
+
 
 .header__slogan-container, .header__main-img
     +flex-flow(column)
     width: 50%
+    @media only screen and (max-width: 500px)
+        width: 100%
+        text-align: center
+        align-items: center
 
 .header__slogan
     margin-top: 250px
     span
         font-size: 62px
+    +resp(medium)
+        margin-top: 100px
+    +resp(small)
+        margin-top: 0
+        span
+            font-size: 10vw
 
-.header__form-action
+
+.header__form-action, .footer__form-action
     margin-top: 110px
     form
         +flex-flow(column)
@@ -52,7 +58,9 @@ body
             border-radius: 20px
             height: 40px
             width: 300px
-            font-size: 25px
+            font-size: 20px
+            +resp(small)
+                width: 100%
             &:focus
                 outline: none
 
@@ -67,7 +75,6 @@ body
             border: 0
             background-color: #066ab6
             color: #fff
-
         .ID_check
             color: #ff9800
             font-size: 21px
@@ -87,9 +94,8 @@ body
                 left: -5px
                 top: -5px
 
-.review-wrapper
-    width: 100%
-    height: 100vh
+.footer__form-action
+    margin-top: 60px
 
 .review
     +container-center
@@ -97,25 +103,33 @@ body
     h2
         font-size: 50px
         margin-bottom: 100px
+    +resp(small)
+        h2
+            font-size: 10vw
 
 .review__blocks-container
-    +flex-flow(row)
+    +flex-flow(row, center, center)
     flex-wrap: wrap
 
 .review__block
     width: calc(50% - 30px)
     border: 2px solid #a0d468
+    margin: 10px
     position: relative
     border-radius: 30px
     padding: 70px
     margin-bottom: 30px
-    +flex-flow(column, center, center)
+    min-width: 450px
+    +flex-flow(column, space-around, center)
     p
         font-size: 20px
-    &:nth-child(2)
-        margin-left: 60px
-    &:nth-child(4)
-        margin-left: 60px
+    +resp(small)
+        padding: 30px
+    @media only screen and (max-width: 500px)
+        width: 100%
+        margin: 10px 0
+        min-width: 100%    
+    
     &:before
         content: ""
         width: 86px
@@ -124,6 +138,13 @@ body
         left: -12px
         top: -12px
         background-image: url(../images/quote_1.jpg)
+        +resp(small)
+            background-image: none
+    
+ 
+        
+
+
 .review__person
     width: 100%
     +flex-flow(row, space-between, flex-end)
@@ -137,12 +158,6 @@ body
     border-radius: 50%
     border: 4px solid #afd36f
 
-
-.condition-wrapper
-    width: 100%
-    height: 100vh
-
-
 .condition
     +container-center
     +flex-flow(column, center, center)
@@ -150,14 +165,25 @@ body
         font-size: 50px
         margin-bottom: 100px
         margin-top: 50px
+        text-align: center
+    +resp(small)
+        h2
+            font-size: 10vw
 
 .condition-container
-    +flex-flow(row, flex-start)
+    +flex-flow(row, center, center)
     width: 100%
+    flex-wrap: wrap
+    padding: 8px
 
 .condition__block
     width: 33.3333333%
     +flex-flow(column)
+    min-width: 385px
+    margin-bottom: 60px
+    @media screen and (max-width: 500px)
+        min-width: 100%
+
 
 .condition__step
     +flex-flow(row)
@@ -166,6 +192,8 @@ body
 
 .condition__step-circle
     width: 60px
+    +resp(small)
+        display: none
 
 .condition__step-elem
     font-size: 30px
@@ -178,19 +206,29 @@ body
 
 .condition__descr
     width: calc(100% - 60px)
+    
     margin-left: 25px
+    p
+        font-size: 20px
     h3
         margin-bottom: 40px
         font-size: 30px
         height: 95px
+        +resp(small)
+            height: 60px
     a
         text-decoration: none
         color: #066ab6
+    +resp(small)
+        width: 100%
+        margin-left: 0
 
 .condition__image
     +flex-flow(row, center)
     width: 100%
     margin-top: 80px
+    +resp(small)
+        margin-top: 40px
 
 .condition__image-block
     border-radius: 50%
@@ -201,29 +239,28 @@ body
         width: 100%
         height: 100%
     
-.rule-wrapper
-    width: 100%
-    height: 100vh
-    background-image: url(../images/bg-rule.jpg)
-    background-repeat: no-repeat
-    background-size: 100%
-    background-position: 100% 0
+
 .rule
     +container-center
     +flex-flow(column, center, center)
+    padding: 0 20px
 
 .rule__container
-    +flex-flow(row)
+    +flex-flow(row, center, center)
+    flex-wrap: wrap
     width: 100%
 
 .rule__block
     width: 50%
+    min-width: 450px
     padding-right: 60px
     padding-top: 100px
     h3
         font-size: 40px
     p
         font-size: 25px
+    @media screen and (max-width: 500px)
+        min-width: 100%
 
 .rule__step
     margin-top: 100px
@@ -246,9 +283,40 @@ body
             +flex-flow(row, center, center)
             color: #fff
 
+.footer-form__block
+    width: 50%
+    max-width: 550px
+    padding-left: 60px
+    padding-top: 100px
+    z-index: 100
+    +resp(small)
+        width: 100%
+        padding-top: 10px
+        margin-bottom: 200px
+        padding-left: 0
+    h3
+        font-size: 40px
+        color: #fff
+        width: 50%
+        +resp(small)
+            color: initial
+            width: 100%
+    
+
+
 .footer
     width: 100%
     margin: -130px auto 0
     height: 130px
     background-color: #252525
     position: relative
+
+.footer__cont
+    +container-center
+    +flex-flow(row, space-between, center)
+    padding: 0 8px
+
+
+
+
+@import wrappers/wrappers

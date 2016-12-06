@@ -1,0 +1,30 @@
+@import ../mixins/media
+
+.header-wrapper
+    min-height: 100%
+    height: auto !important
+    background-image: url(../images/iphone.png)
+    background-repeat: no-repeat
+    background-position: center center
+    background-size: 1600px
+    display: flex
+    align-items: center
+    +resp(medium)
+        background-size: 1024px
+    +resp(small)
+        background-size: 100%
+    @media only screen and (max-width: 750px)
+        background-image: none
+
+.header-wrapper, .review-wrapper, .condition-wrapper, .rule-wrapper
+    width: 100%
+    height: auto
+    min-height: 100vh
+
+.rule-wrapper
+    background-image: url(../images/bg-rule.jpg)
+    background-repeat: no-repeat
+    background-size: cover
+    background-position: center center
+    +resp(small)
+        background-image: none

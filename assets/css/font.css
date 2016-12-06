@@ -60,10 +60,9 @@
 /* font-family: "MyriadProThin"; */
 @font-face {
     font-family: "MyriadProThin";
-    src: url("../fonts/MyriadProSemiBoldItalic/MyriadProThin.eot");
-    src: url("../fonts/MyriadProSemiBoldItalic/MyriadProThin.eot?#iefix")format("embedded-opentype"),
-    url("../fonts/MyriadProSemiBoldItalic/MyriadProThin.woff") format("woff"),
-    url("../fonts/MyriadProSemiBoldItalic/MyriadProThin.ttf") format("truetype");
+    src: url("../fonts/MyriadProThin/MyriadProThin.eot");
+    src: url("../fonts/MyriadProThin/MyriadProThin.eot?#iefix")format("embedded-opentype"),
+    url("../fonts/MyriadProThin/MyriadProThin.ttf") format("truetype");
     font-style: normal;
     font-weight: normal;
 }
