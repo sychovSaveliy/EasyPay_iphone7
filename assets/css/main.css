@@ -3,7 +3,8 @@
   -webkit-box-sizing: border-box; }
 
 html, body {
-  height: 100%; }
+  height: 100%;
+  overflow: auto; }
 
 body {
   background-color: #fff;
@@ -41,6 +42,12 @@ body {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 20px; }
+  @media only screen and (max-width: 750px) {
+    .header {
+      -webkit-box-pack: center;
+      -webkit-justify-content: center;
+          -ms-flex-pack: center;
+              justify-content: center; } }
 
 .header__slogan-container, .header__main-img {
   display: -webkit-box;
@@ -61,6 +68,14 @@ body {
       -ms-flex-align: start;
           align-items: flex-start;
   width: 50%; }
+  @media only screen and (max-width: 500px) {
+    .header__slogan-container, .header__main-img {
+      width: 100%;
+      text-align: center;
+      -webkit-box-align: center;
+      -webkit-align-items: center;
+          -ms-flex-align: center;
+              align-items: center; } }
 
 .header__slogan {
   margin-top: 250px; }
@@ -73,11 +88,11 @@ body {
     .header__slogan {
       margin-top: 0; }
       .header__slogan span {
-        font-size: 45px; } }
+        font-size: 10vw; } }
 
-.header__form-action {
+.header__form-action, .footer__form-action {
   margin-top: 110px; }
-  .header__form-action form {
+  .header__form-action form, .footer__form-action form {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -95,25 +110,28 @@ body {
     -webkit-align-items: flex-start;
         -ms-flex-align: start;
             align-items: flex-start; }
-    .header__form-action form input {
+    .header__form-action form input, .footer__form-action form input {
       margin-top: 10px;
       border-radius: 20px;
       height: 40px;
       width: 300px;
       font-size: 20px; }
-      .header__form-action form input:focus {
+      @media only screen and (min-width: 320px) and (max-width: 1023px) {
+        .header__form-action form input, .footer__form-action form input {
+          width: 100%; } }
+      .header__form-action form input:focus, .footer__form-action form input:focus {
         outline: none; }
-    .header__form-action form input[type="text"], .header__form-action form input[type="email"] {
+    .header__form-action form input[type="text"], .header__form-action form input[type="email"], .footer__form-action form input[type="text"], .footer__form-action form input[type="email"] {
       border: 1px solid #888888;
       padding: 10px;
       padding-left: 20px;
       color: #888888; }
-    .header__form-action form input[type="submit"] {
+    .header__form-action form input[type="submit"], .footer__form-action form input[type="submit"] {
       margin-top: 40px;
       border: 0;
       background-color: #066ab6;
       color: #fff; }
-    .header__form-action form .ID_check {
+    .header__form-action form .ID_check, .footer__form-action form .ID_check {
       color: #ff9800;
       font-size: 21px;
       margin-top: 10px;
@@ -137,7 +155,7 @@ body {
       -webkit-align-items: flex-start;
           -ms-flex-align: start;
               align-items: flex-start; }
-      .header__form-action form .ID_check:before {
+      .header__form-action form .ID_check:before, .footer__form-action form .ID_check:before {
         content: "";
         background-image: url(../images/flag_mini.png);
         background-repeat: no-repeat;
@@ -147,6 +165,9 @@ body {
         position: absolute;
         left: -5px;
         top: -5px; }
+
+.footer__form-action {
+  margin-top: 60px; }
 
 .review {
   width: 100%;
@@ -174,7 +195,7 @@ body {
     margin-bottom: 100px; }
   @media only screen and (min-width: 320px) and (max-width: 1023px) {
     .review h2 {
-      font-size: 45px; } }
+      font-size: 10vw; } }
 
 .review__blocks-container {
   display: -webkit-box;
@@ -227,7 +248,12 @@ body {
     font-size: 20px; }
   @media only screen and (min-width: 320px) and (max-width: 1023px) {
     .review__block {
-      padding: 60px; } }
+      padding: 30px; } }
+  @media only screen and (max-width: 500px) {
+    .review__block {
+      width: 100%;
+      margin: 10px 0;
+      min-width: 100%; } }
   .review__block:before {
     content: "";
     width: 86px;
@@ -236,6 +262,9 @@ body {
     left: -12px;
     top: -12px;
     background-image: url(../images/quote_1.jpg); }
+    @media only screen and (min-width: 320px) and (max-width: 1023px) {
+      .review__block:before {
+        background-image: none; } }
 
 .review__person {
   width: 100%;
@@ -305,10 +334,11 @@ body {
   .condition h2 {
     font-size: 50px;
     margin-bottom: 100px;
-    margin-top: 50px; }
+    margin-top: 50px;
+    text-align: center; }
   @media only screen and (min-width: 320px) and (max-width: 1023px) {
-    .condition {
-      font-size: 45px; } }
+    .condition h2 {
+      font-size: 10vw; } }
 
 .condition-container {
   display: -webkit-box;
@@ -331,7 +361,8 @@ body {
   width: 100%;
   -webkit-flex-wrap: wrap;
       -ms-flex-wrap: wrap;
-          flex-wrap: wrap; }
+          flex-wrap: wrap;
+  padding: 8px; }
 
 .condition__block {
   width: 33.33333%;
@@ -354,6 +385,9 @@ body {
           align-items: flex-start;
   min-width: 385px;
   margin-bottom: 60px; }
+  @media screen and (max-width: 500px) {
+    .condition__block {
+      min-width: 100%; } }
 
 .condition__step {
   display: -webkit-box;
@@ -378,6 +412,9 @@ body {
 
 .condition__step-circle {
   width: 60px; }
+  @media only screen and (min-width: 320px) and (max-width: 1023px) {
+    .condition__step-circle {
+      display: none; } }
 
 .condition__step-elem {
   font-size: 30px;
@@ -419,6 +456,10 @@ body {
   .condition__descr a {
     text-decoration: none;
     color: #066ab6; }
+  @media only screen and (min-width: 320px) and (max-width: 1023px) {
+    .condition__descr {
+      width: 100%;
+      margin-left: 0; } }
 
 .condition__image {
   display: -webkit-box;
@@ -486,24 +527,31 @@ body {
   -webkit-flex-direction: row;
       -ms-flex-direction: row;
           flex-direction: row;
-  -webkit-box-pack: start;
-  -webkit-justify-content: flex-start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
-  -webkit-box-align: start;
-  -webkit-align-items: flex-start;
-      -ms-flex-align: start;
-          align-items: flex-start;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
   width: 100%; }
 
 .rule__block {
   width: 50%;
+  min-width: 450px;
   padding-right: 60px;
   padding-top: 100px; }
   .rule__block h3 {
     font-size: 40px; }
   .rule__block p {
     font-size: 25px; }
+  @media screen and (max-width: 500px) {
+    .rule__block {
+      min-width: 100%; } }
 
 .rule__step {
   margin-top: 100px;
@@ -542,6 +590,27 @@ body {
               align-items: center;
       color: #fff; }
 
+.footer-form__block {
+  width: 50%;
+  max-width: 550px;
+  padding-left: 60px;
+  padding-top: 100px;
+  z-index: 100; }
+  @media only screen and (min-width: 320px) and (max-width: 1023px) {
+    .footer-form__block {
+      width: 100%;
+      padding-top: 10px;
+      margin-bottom: 200px;
+      padding-left: 0; } }
+  .footer-form__block h3 {
+    font-size: 40px;
+    color: #fff;
+    width: 50%; }
+    @media only screen and (min-width: 320px) and (max-width: 1023px) {
+      .footer-form__block h3 {
+        color: initial;
+        width: 100%; } }
+
 .footer {
   width: 100%;
   margin: -130px auto 0;
@@ -570,6 +639,9 @@ body {
   @media only screen and (min-width: 320px) and (max-width: 1023px) {
     .header-wrapper {
       background-size: 100%; } }
+  @media only screen and (max-width: 750px) {
+    .header-wrapper {
+      background-image: none; } }
 
 .header-wrapper, .review-wrapper, .condition-wrapper, .rule-wrapper {
   width: 100%;
@@ -581,3 +653,6 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center; }
+  @media only screen and (min-width: 320px) and (max-width: 1023px) {
+    .rule-wrapper {
+      background-image: none; } }

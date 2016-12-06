@@ -8,6 +8,7 @@
 
 html, body
     height: 100%
+    overflow: auto
 
 body
     background-color: #fff
@@ -24,11 +25,17 @@ body
     +flex-flow(row)
     +container-center
     padding: 0 20px
+    @media only screen and (max-width: 750px)
+        justify-content: center
 
 
 .header__slogan-container, .header__main-img
     +flex-flow(column)
     width: 50%
+    @media only screen and (max-width: 500px)
+        width: 100%
+        text-align: center
+        align-items: center
 
 .header__slogan
     margin-top: 250px
@@ -39,9 +46,10 @@ body
     +resp(small)
         margin-top: 0
         span
-            font-size: 45px
+            font-size: 10vw
 
-.header__form-action
+
+.header__form-action, .footer__form-action
     margin-top: 110px
     form
         +flex-flow(column)
@@ -51,6 +59,8 @@ body
             height: 40px
             width: 300px
             font-size: 20px
+            +resp(small)
+                width: 100%
             &:focus
                 outline: none
 
@@ -65,9 +75,6 @@ body
             border: 0
             background-color: #066ab6
             color: #fff
-            
-           
-
         .ID_check
             color: #ff9800
             font-size: 21px
@@ -87,6 +94,9 @@ body
                 left: -5px
                 top: -5px
 
+.footer__form-action
+    margin-top: 60px
+
 .review
     +container-center
     +flex-flow(column, center, center)
@@ -95,7 +105,7 @@ body
         margin-bottom: 100px
     +resp(small)
         h2
-            font-size: 45px
+            font-size: 10vw
 
 .review__blocks-container
     +flex-flow(row, center, center)
@@ -114,7 +124,11 @@ body
     p
         font-size: 20px
     +resp(small)
-        padding: 60px
+        padding: 30px
+    @media only screen and (max-width: 500px)
+        width: 100%
+        margin: 10px 0
+        min-width: 100%    
     
     &:before
         content: ""
@@ -124,6 +138,8 @@ body
         left: -12px
         top: -12px
         background-image: url(../images/quote_1.jpg)
+        +resp(small)
+            background-image: none
     
  
         
@@ -149,19 +165,25 @@ body
         font-size: 50px
         margin-bottom: 100px
         margin-top: 50px
+        text-align: center
     +resp(small)
-        font-size: 45px
+        h2
+            font-size: 10vw
 
 .condition-container
     +flex-flow(row, center, center)
     width: 100%
     flex-wrap: wrap
+    padding: 8px
 
 .condition__block
     width: 33.3333333%
     +flex-flow(column)
     min-width: 385px
     margin-bottom: 60px
+    @media screen and (max-width: 500px)
+        min-width: 100%
+
 
 .condition__step
     +flex-flow(row)
@@ -170,6 +192,8 @@ body
 
 .condition__step-circle
     width: 60px
+    +resp(small)
+        display: none
 
 .condition__step-elem
     font-size: 30px
@@ -182,6 +206,7 @@ body
 
 .condition__descr
     width: calc(100% - 60px)
+    
     margin-left: 25px
     p
         font-size: 20px
@@ -194,6 +219,9 @@ body
     a
         text-decoration: none
         color: #066ab6
+    +resp(small)
+        width: 100%
+        margin-left: 0
 
 .condition__image
     +flex-flow(row, center)
@@ -218,17 +246,21 @@ body
     padding: 0 20px
 
 .rule__container
-    +flex-flow(row)
+    +flex-flow(row, center, center)
+    flex-wrap: wrap
     width: 100%
 
 .rule__block
     width: 50%
+    min-width: 450px
     padding-right: 60px
     padding-top: 100px
     h3
         font-size: 40px
     p
         font-size: 25px
+    @media screen and (max-width: 500px)
+        min-width: 100%
 
 .rule__step
     margin-top: 100px
@@ -250,12 +282,36 @@ body
             border-radius: 50%
             +flex-flow(row, center, center)
             color: #fff
+
+.footer-form__block
+    width: 50%
+    max-width: 550px
+    padding-left: 60px
+    padding-top: 100px
+    z-index: 100
+    +resp(small)
+        width: 100%
+        padding-top: 10px
+        margin-bottom: 200px
+        padding-left: 0
+    h3
+        font-size: 40px
+        color: #fff
+        width: 50%
+        +resp(small)
+            color: initial
+            width: 100%
+    
+
+
 .footer
     width: 100%
     margin: -130px auto 0
     height: 130px
     background-color: #252525
     position: relative
+
+
 
 
 @import wrappers/wrappers
